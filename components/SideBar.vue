@@ -4,6 +4,9 @@ defineProps({
     type: Array as () => Link[],
     required: true,
   },
+  user: {
+    type: Object as () => any,
+  },
 });
 const emits = defineEmits(["toggle-sidebar"]);
 
@@ -14,7 +17,7 @@ const toggleSidebar = () => {
 
 <template>
   <nav
-    class="fixed top-0 w-full md:w-auto h-dvh py-16 px-8 border-r z-20 bg-white"
+    class="fixed top-0 w-full md:w-auto h-dvh flex flex-col py-16 px-8 border-r z-20 bg-white"
   >
     <Icon
       name="tabler:x"
@@ -35,6 +38,9 @@ const toggleSidebar = () => {
         />
         {{ link.name }}
       </NuxtLink>
+    </div>
+    <div class="flex flex-grow items-end" v-if="user">
+      <Button variant="destructive" class="w-full"> Cerrar sesión </Button>
     </div>
   </nav>
 </template>
