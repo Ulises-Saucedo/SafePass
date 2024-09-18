@@ -1,7 +1,31 @@
 <script setup lang="ts">
+import { toast } from "@/components/ui/toast";
+import { AuthService } from "~/services/AuthService";
+
+const authService = new AuthService();
 const user = useSupabaseUser();
 const showSidebar: Ref<boolean> = ref(false);
 const toggleSidebar = () => (showSidebar.value = !showSidebar.value);
+const logout = async () => {
+  try {
+    const { error } = await authService.logout();
+
+    if (error) {
+      toast({
+        title: "Error al cerrar sesión",
+      });
+      return;
+    }
+
+    toast({
+      title: "Has cerrado sesión correctamente",
+    });
+  } catch {
+    toast({
+      title: "Error al cerrar sesión",
+    });
+  }
+};
 const links: ComputedRef<Link[]> = computed(() => [
   {
     name: "Inicio",
@@ -39,6 +63,7 @@ const links: ComputedRef<Link[]> = computed(() => [
       :links="links"
       :user="user"
       @toggle-sidebar="toggleSidebar"
+      @logout="logout"
     />
   </Transition>
 

@@ -8,7 +8,7 @@ defineProps({
     type: Object as () => any,
   },
 });
-const emits = defineEmits(["toggle-sidebar"]);
+const emits = defineEmits(["toggle-sidebar", "logout"]);
 
 const toggleSidebar = () => {
   emits("toggle-sidebar");
@@ -40,7 +40,9 @@ const toggleSidebar = () => {
       </NuxtLink>
     </div>
     <div class="flex flex-grow items-end" v-if="user">
-      <Button variant="destructive" class="w-full"> Cerrar sesión </Button>
+      <Button variant="destructive" class="w-full" @click="$emit('logout')">
+        Cerrar sesión
+      </Button>
     </div>
   </nav>
 </template>
