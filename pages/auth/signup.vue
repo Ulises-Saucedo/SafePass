@@ -104,9 +104,9 @@ async function onSubmit(values: Record<string, any>) {
           />
           Google
         </Button>
-        <NuxtLink to="/auth/signup">
-          ¿No tienes cuenta?
-          <span class="text-blue-500 underline">Registrarme</span>
+        <NuxtLink to="/auth/signin">
+          ¿Ya tienes cuenta?
+          <span class="text-blue-500 underline">Iniciar sesión</span>
         </NuxtLink>
       </CardContent>
     </Card>
