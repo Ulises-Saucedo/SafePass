@@ -56,18 +56,24 @@ const links: ComputedRef<Link[]> = computed(() => [
 </script>
 
 <template>
-  <Header @toggle-sidebar="toggleSidebar" />
-  <Transition name="fade">
-    <SideBar
-      v-show="showSidebar"
-      :links="links"
-      :user="user"
-      @toggle-sidebar="toggleSidebar"
-      @logout="logout"
-    />
-  </Transition>
+  <div class="flex flex-col min-h-dvh">
+    <Header @toggle-sidebar="toggleSidebar" />
+    <Transition name="fade">
+      <SideBar
+        v-show="showSidebar"
+        :links="links"
+        :user="user"
+        @toggle-sidebar="toggleSidebar"
+        @logout="logout"
+      />
+    </Transition>
 
-  <slot />
+    <slot />
+
+    <div class="flex flex-grow items-end">
+      <Footer />
+    </div>
+  </div>
 </template>
 
 <style scoped>
