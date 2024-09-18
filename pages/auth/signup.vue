@@ -4,7 +4,7 @@ import { toast } from "@/components/ui/toast";
 import { AuthService } from "~/services/AuthService";
 
 useHead({
-  title: "Iniciar sesión",
+  title: "Registro",
 });
 
 const authService = new AuthService();
