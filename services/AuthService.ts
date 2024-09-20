@@ -34,6 +34,8 @@ export class AuthService {
   async logout() {
     const { error } = await this.supabase.auth.signOut();
 
+    localStorage.removeItem("passwords");
+
     return { error };
   }
 }
