@@ -1,75 +1,47 @@
-# Nuxt 3 Minimal Starter
+# ApplyHub
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+SafePass es una aplicación web diseñada para ayudar a los usuarios a gestionar sus contraseñas de manera segura y eficiente. Los usuarios pueden agregar, editar y eliminar contraseñas, además de ver detalles importantes relacionados con sus credenciales de acceso.
 
-## Setup
+## Tecnologías
 
-Make sure to install the dependencies:
+- **Nuxt 3**: Framework de Vue.js para el desarrollo de aplicaciones web.
+- **Supabase**: Proporciona la base de datos y autenticación.
+- *¨*shadcn/vue**: Utilizado para los componentes de la interfaz de usuario.
 
-```bash
-# npm
-npm install
+## Características
 
-# pnpm
-pnpm install
+- Registro e inicio de sesión mediante Supabase (incluye autenticación con Google).
+- Gestión de contraseñas: agregar, editar, eliminar y ver contraseñas guardadas.
+- Sincronización en tiempo real gracias a Supabase para mantener los datos actualizados.
+- Almacenamiento seguro de contraseñas utilizando encriptación para proteger los datos sensibles.
 
-# yarn
-yarn install
+## Instalación
 
-# bun
-bun install
-```
+1. Clona este repositorio:
 
-## Development Server
+    ```bash
+    git clone https://github.com/Ulises-Saucedo/SafePass.git
+    cd safepass
+    ```
 
-Start the development server on `http://localhost:3000`:
+2. Instala las dependencias:
 
-```bash
-# npm
-npm run dev
+    ```bash
+    npm install
+    ```
 
-# pnpm
-pnpm run dev
+3. Configura las variables de entorno creando un archivo `.env` en la raíz del proyecto. Asegúrate de agregar tus credenciales de Supabase:
 
-# yarn
-yarn dev
+    ```
+    SECRET_KEY=
+    SUPABASE_URL=
+    SUPABASE_KEY=
+    ```
 
-# bun
-bun run dev
-```
+4. Inicia el servidor de desarrollo:
 
-## Production
+    ```bash
+    npm run dev
+    ```
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+    El sitio estará disponible en `http://localhost:3000`.
