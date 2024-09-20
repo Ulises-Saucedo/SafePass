@@ -3,6 +3,7 @@ import { toast } from "@/components/ui/toast";
 import { AuthService } from "~/services/AuthService";
 
 const authService = new AuthService();
+const router = useRouter();
 const user = useSupabaseUser();
 const showSidebar: Ref<boolean> = ref(false);
 const toggleSidebar = () => (showSidebar.value = !showSidebar.value);
@@ -20,6 +21,8 @@ const logout = async () => {
     toast({
       title: "Has cerrado sesión correctamente",
     });
+
+    router.push("/auth/signin");
   } catch {
     toast({
       title: "Error al cerrar sesión",
