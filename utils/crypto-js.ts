@@ -1,12 +1,13 @@
 import CryptoJS from "crypto-js";
 
-const secretKey = "mi-clave-secreta";
+const runtimeConfig = useRuntimeConfig();
+const secretKey = runtimeConfig.public.secretKey;
 
-function encryptPassword(password: string): string {
+export function encryptPassword(password: string): string {
   return CryptoJS.AES.encrypt(password, secretKey).toString();
 }
 
-function decryptPassword(encryptedPassword: string): string {
+export function decryptPassword(encryptedPassword: string): string {
   const bytes = CryptoJS.AES.decrypt(encryptedPassword, secretKey);
   return bytes.toString(CryptoJS.enc.Utf8);
 }
