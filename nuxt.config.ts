@@ -22,6 +22,11 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/png", href: "/logotipo.png" }],
     },
   },
+  runtimeConfig: {
+    public: {
+      secretKey: process.env.SECRET_KEY || "clave-secreta",
+    },
+  },
   css: ["~/assets/css/base.css"],
   imports: {
     dirs: ["types"],
