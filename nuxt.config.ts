@@ -17,11 +17,11 @@ export default defineNuxtConfig({
     key: process.env.SUPABASE_KEY,
     redirect: false,
   },
-  // app: {
-  //   head: {
-  //     link: [{ rel: "icon", type: "image/png", href: "/logotipo.png" }],
-  //   },
-  // },
+  app: {
+    head: {
+      link: [{ rel: "icon", type: "image/png", href: "/logotipo.png" }],
+    },
+  },
   css: ["~/assets/css/base.css"],
   imports: {
     dirs: ["types"],
